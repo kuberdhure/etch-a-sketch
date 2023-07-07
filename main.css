@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    background-color: aquamarine;
+    margin:30px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pixel{
+  flex-grow: 1;
+  flex-shrink: 0;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
