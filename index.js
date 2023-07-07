@@ -1,9 +1,11 @@
 let doc = document;
 let container = doc.querySelector('.container');
 let slider = doc.querySelector('.grid-size-val');
+let gridSizeLabel = doc.querySelector('.grid-size-label')
+let resetBtn = doc.querySelector('.reset')
+let gridSize = 2;
 slider.min = 2;
 slider.max = 64;
-let gridSize = 2;
 
 
 doc.body.appendChild(container);
@@ -12,6 +14,7 @@ function createCells(gridSize){
     
     // Clear existing cells
     container.innerHTML = '';
+    gridSizeLabel.innerText = `Grid size: ${gridSize} x ${gridSize}`
     const cellSize = `calc(100% / ${gridSize})`;
 
     for (let i = 0; i < Math.pow(gridSize, 2); i++) {
@@ -27,6 +30,14 @@ function createCells(gridSize){
     
 }
 
+
+function resetCells(){
+  container.innerHTML = ''; 
+  createCells(slider.value)
+}
+
+
+
 createCells(gridSize);
 
 
@@ -36,3 +47,6 @@ slider.addEventListener('input',(event)=>{
     console.log(gridSize)
 });
 
+resetBtn.addEventListener('click',()=>{
+  resetCells()
+});
