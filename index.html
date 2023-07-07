@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Noto+Sans">
   <title>Etch-a-Sketch Game</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="container"></div>
-  <div class="controls">
-    <h1>
-      Controls:
-    </h1>
-    <input type="range" class="grid-size-val" value="2"/>
-    <h3 class="grid-size-label"></h3>
-    <button class="reset">Reset</button>
-    <button class="col-black">Black</button>
-    <button class="col-rgb">RGB</button>
+  <div class="header">
+    <h1 class="title">Etch-a-Sketch</h1>
+  </div>
+  <div class="content">
+    <div class="container"></div>
+      <div class="controls">
+        <h1>
+          Controls:
+        </h1>
+        <input type="range" id="range1" class="grid-size-val" value="2"/>
+        <h3 class="grid-size-label"></h3>
+        <button class="reset">Reset</button>
+        <button class="col-black">Black</button>
+        <button class="col-rgb">RGB</button>
+      </div>    
   </div>
   <script src="index.js"></script>
 </body>

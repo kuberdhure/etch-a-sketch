@@ -6,12 +6,11 @@ let resetBtn = doc.querySelector(".reset");
 let gridSize = 2;
 let colBtnBlk = doc.querySelector(".col-black");
 let colBtnRGB = doc.querySelector(".col-rgb");
-let cellColor = 'black';
+let cellColor = 'rgb';
 
 slider.min = 2;
 slider.max = 64;
 
-doc.body.appendChild(container);
 
 function createCells(gridSize) {
   // Clear existing cells
@@ -45,7 +44,10 @@ function getRandomRGBColor() {
   return rgbColor;
 }
 
-createCells(gridSize);
+addEventListener('DOMContentLoaded',() => {
+  createCells(gridSize);
+})
+
 
 slider.addEventListener("input", (event) => {
   gridSize = event.target.value;
@@ -64,3 +66,5 @@ colBtnRGB.addEventListener("click",() => {
 colBtnBlk.addEventListener("click",() => {
   cellColor = 'black';
 });
+
+doc.content.appendChild(container);
