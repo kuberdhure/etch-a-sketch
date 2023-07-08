@@ -6,6 +6,8 @@ let resetBtn = doc.querySelector(".reset");
 let gridSize = 2;
 let colBtnBlk = doc.querySelector(".col-black");
 let colBtnRGB = doc.querySelector(".col-rgb");
+let colPicker = doc.querySelector(".color-picker");
+let customColor;
 let cellColor = 'rgb';
 
 slider.min = 2;
@@ -21,7 +23,7 @@ function createCells(gridSize) {
   for (let i = 0; i < Math.pow(gridSize, 2); i++) {
     let pixel = doc.createElement("div");
     pixel.addEventListener("mouseover", function (event) {
-      event.target.style.backgroundColor = cellColor == 'black'? 'black' : getRandomRGBColor();
+      event.target.style.backgroundColor = cellColor == 'black'? 'black' : (cellColor == 'rgb' ? getRandomRGBColor() : customColor);
     });
     pixel.style.width = cellSize;
     pixel.style.height = cellSize;
@@ -67,4 +69,7 @@ colBtnBlk.addEventListener("click",() => {
   cellColor = 'black';
 });
 
-doc.content.appendChild(container);
+colPicker.addEventListener('input',()=>{
+    cellColor = 'custom';
+    customColor = colPicker.value;
+})

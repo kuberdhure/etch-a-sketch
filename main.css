@@ -53,16 +53,16 @@ body{
 .content{
   display: flex;
   flex-direction: row;
-  margin-left: 21%;
+  gap:20px;
 }
 .controls{
   color: rgb(127,91,165);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px;
   background-color: rgba(255, 255,255, 0.458);
   padding: 10px;
+  align-self: center;
 }
 
 button {
@@ -78,6 +78,16 @@ button {
 
 button:hover {
   opacity: 0.8;
+}
+
+.color-picker{
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  margin: 2px;
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
 }
 
 .btns{
